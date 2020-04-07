@@ -12,4 +12,6 @@ module.exports = {
     sourceType: "module",
   },
   rules: {},
+
+  "extends": ["airbnb"]
 };
