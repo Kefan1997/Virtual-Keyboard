@@ -1,9 +1,9 @@
-.wrapper{
+.wrapper {
     width: 1020px;
     margin: 0 auto;
 }
 
-.keyboard{
+.keyboard {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -15,7 +15,7 @@
     margin-bottom: 10px;
 }
 
-.button{
+.button {
    width: 50px;
    height: 50px;
    border: 1px solid black;
@@ -24,7 +24,7 @@
    float: left;
 }
 
-.textarea{
+.textarea {
     margin-top: 40px;
     width: 100%;
     height: 200px;
@@ -34,17 +34,27 @@
     border: 2px solid black;
 }
 
-.active{
-    background-color:  orange;
+.button:hover {
+  animation-name: changeColor;
+  animation-duration: 1s;
+  color: white;
+  background-color: orange;
+  cursor: pointer;
+  box-shadow: 0 0 20px orange;
 }
-.clearfix{
+
+.active {
+    background-color:  orange;
+    box-shadow: orange;
+}
+.clearfix {
     display: block;
     width: 100%;
     clear: both;
 }
 
 .backspace,
-.caps{
+.caps {
     width: 120px;
 }
 
@@ -63,4 +73,14 @@
   .Tab {
     width: 70px;
   }
-   
+
+  @keyframes changeColor {
+    from {
+      color: black;
+      background-color: white;
+    }
+    to {
+      color: white;
+      background-color: orange;
+    }
+  }
