@@ -11,11 +11,9 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: "module",
   },
-
   rules: {
     "linebreak-style": "off",
     "prefer-destructuring": "off"
   },
-
   extends: ["airbnb"],
 };

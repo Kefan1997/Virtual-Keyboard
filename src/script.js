@@ -74,33 +74,9 @@ let shiftCaseLeft = false;
 let altCaseLeft = false;
 let changeLangUpKeyFlag = false;
 let capsLock = false;
-
-function createVirtualKeyboard() {
-  const wrapper = document.createElement('div');
-  wrapper.className = 'wrapper';
-
-  const textarea = document.createElement('textarea');
-  textarea.className = 'textarea';
-  wrapper.append(textarea);
-
-  const keyboard = document.createElement('div');
-  keyboard.className = 'keyboard';
-  wrapper.append(keyboard);
-
-  const clearfix = document.createElement('div');
-  clearfix.className = 'clearfix';
-  keyboard.append(clearfix);
-
-  document.body.append(wrapper);
-
-  keyboard.after('Shift + alt - change language');
-}
-
-createVirtualKeyboard();
-
-const keyboard = document.querySelector('.keyboard');
-const textarea = document.querySelector('.textarea');
-const clearfix = document.querySelector('.clearfix');
+let keyboard = document.querySelector('.keyboard');
+let textarea = document.querySelector('.textarea');
+let clearfix = document.querySelector('.clearfix');
 
 class Button {
   constructor({ code, key, style }) {
@@ -117,6 +93,27 @@ class Button {
     div.innerHTML = this.code;
     return div;
   }
+}
+
+function createVirtualKeyboard() {
+  const wrapper = document.createElement('div');
+  wrapper.className = 'wrapper';
+
+  textarea = document.createElement('textarea');
+  textarea.className = 'textarea';
+  wrapper.append(textarea);
+
+  keyboard = document.createElement('div');
+  keyboard.className = 'keyboard';
+  wrapper.append(keyboard);
+
+  clearfix = document.createElement('div');
+  clearfix.className = 'clearfix';
+  keyboard.append(clearfix);
+
+  document.body.append(wrapper);
+
+  keyboard.after('Shift + alt - change language');
 }
 
 function creatButton() {
@@ -316,6 +313,7 @@ function identifyKey(event, updown) {
   }
 }
 
+createVirtualKeyboard();
 creatButton();
 showKey();
 textarea.focus();
